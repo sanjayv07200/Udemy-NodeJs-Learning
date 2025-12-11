@@ -10,6 +10,8 @@ console.log("file written !");*/
 
 /// now its turn to write code in asynchronus way
 const fs = require("fs");
+const http = require("http");
+/*
 fs.readFile("input.txt", "utf-8", (err, data1) => {
   fs.readFile("output.txt", "utf-8", (err, data2) => {
     fs.writeFile("append.txt", `${data1}\n ${data2}`, "utf-8", (err) => {
@@ -17,4 +19,11 @@ fs.readFile("input.txt", "utf-8", (err, data1) => {
     });
   });
 });
-console.log("code running......");
+console.log("code running......");*/
+
+const server = http.createServer((req, res) => {
+  console.log("hello from the server !");
+});
+server.listen(8000, "127.0.0.1", () => {
+  console.log("listeing the request on port 80");
+});
